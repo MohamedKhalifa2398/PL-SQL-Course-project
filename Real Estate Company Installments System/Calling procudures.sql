@@ -1,0 +1,14 @@
+DECLARE
+           CURSOR CONTRACT_CUR
+           IS
+           SELECT * FROM PROJECT.CONTRACTS ;
+BEGIN
+            FOR CONTRACT_REC IN CONTRACT_CUR LOOP
+                
+             PROJECT.SET_INSTALLMENTS_NO ( CONTRACT_REC.CONTRACT_ID );
+
+           PROJECT.SET_INSTALLMENTS ( CONTRACT_REC.CONTRACT_ID  );
+             
+            END LOOP;
+
+END;
